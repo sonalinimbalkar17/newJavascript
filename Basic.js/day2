@@ -1,0 +1,107 @@
+//operator
+//1. arithmatic operator
+//2. comparision  operator
+//3.logical operator
+
+//1. arithmatic operator(+,-,*,/,%)
+let a=10
+let b=10
+
+console.log(a+b)
+console.log(a-b)
+console.log(a*b)
+console.log(a/b)
+console.log(a%b)
+
+//10 pair ==> 50 line  ==> effort , memory, time
+//DRY  ==> donot repeat yourself using function
+
+//function
+//syntax
+// function functionName(para1, para2){
+//      //statement
+//  }
+//  function call ==> functionName
+
+function add(x,y){
+    console.log(x+y)
+    console.log(x-y)
+    console.log(x*y)
+    console.log(x/y)
+    console.log(x%y)
+}
+add(15,5)
+
+//function without para and without return type
+function calculator(){
+    console.log(200-100)
+}
+calculator()
+calculator() //same o/p
+
+//function with para and without return type
+function calculator2(c,d){
+    console.log(c+d)
+}
+calculator2(500,50)
+calculator2(500,500) //change o/p
+
+//function with para and with return type
+function calculator3(e,f){
+    return(e+f)
+}
+let p=calculator3(20,9)
+console.log(p)
+console.log(p*6)
+console.log(p+60)
+
+//2.comparision operator  ==> <, >, <=, >=,==, !=, ===, !==
+//boolean
+//== , !=  => value  5 , "5"  => dynamic comparision operator
+//===, !==  => value and datatype  => strict comparison operator
+
+console.log(100<50)//false
+console.log(100>50)//true
+console.log(100<=50)//false
+console.log(100>=50)//true
+console.log(100==50)//false
+console.log('100'==50)//false
+console.log(100!=50)//true
+console.log(100===50)//false
+console.log(100==='50')//false
+console.log(100!==50)//true
+
+//3.logical operator
+//AND(&&)----multiplication
+// true && true==>true
+// true && false==>false
+// false && true==>false
+// false && false==>false
+
+console.log(10==10 && 5==5)//true
+console.log(10==='10' && 5==5)//false
+console.log(10==10 && 5!=5)//false
+console.log(10!==10 && 5==='5')//false
+
+//OR(||)---addition
+// true || true==>true
+// true || false==>true
+// false || true==>true
+// false || false==>false
+
+console.log(10==10 || 5==5)//true
+console.log(10==='10' || 5==5)//true
+console.log(10==10 || 5!=5)//true
+console.log(10!==10 ||5==='5')//false
+
+//NOT(!)
+//true ==> !true  => false
+//false ==> !false ==> true
+
+console.log(!20==20)//false
+console.log(!20<10)//true
+
+
+
+
+

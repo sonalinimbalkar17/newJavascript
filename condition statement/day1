@@ -1,0 +1,118 @@
+//condition statement
+//need ==> single input ==> multiple outcome
+//if 
+//if else--->ternary operator
+//if else if else
+//switch case
+
+//if 
+//syntax
+//if(condition){
+    //statement
+//}
+//program 1
+if(10==10){
+    console.log(true)
+}
+
+//program 2
+//tickets
+//1 - 5 ==> 10 % discount
+//6 -10 ==> 20 % discount
+//>10 ==> 30 % discount
+
+let ticketCount = 10
+if (ticketCount > 0 && ticketCount <= 5) {
+    console.log(" 10 % discount")
+}
+if (ticketCount > 5 && ticketCount <= 10) {
+    console.log(" 20 % discount")//true
+}
+if (ticketCount > 10) {
+    console.log(" 30 % discount")
+}
+//program 3
+
+let score = 100
+if (score > 90) {
+    console.log("Best Player")//true
+}
+if (score > 70) {
+    console.log("Better player")//true
+}
+if (score > 50) {
+    console.log("Good player")//true
+}
+
+//if else
+//program 1
+let a=50
+let b=30
+if(a>b){
+    console.log('a is greter')//true
+}
+else{
+    console.log('b is greter')
+}
+
+//program 2
+let student = 30
+if (student > 5) {
+    console.log("Class started")
+}
+else {
+    console.log("Class ended")
+}
+
+//single condition  ==> ternary operator
+//condition ? true : false
+
+student > 5 ? console.log("Class started") : console.log("Class ended")
+
+let q = student > 5 ? "Class started" : "Please wait for 2 more min"
+console.log(q)
+
+//if else if else
+//program 1
+let marks = 100
+if (marks > 90) {
+    console.log("A grade")//true
+}
+else if(score > 70) {
+    console.log("B grade")
+}
+ else if (score > 50) {
+    console.log("C grade")
+}
+else{
+    console.log("fail")
+}
+
+//program 2
+let x = 100
+let y = 50
+if (x > y) {
+    console.log("A is greater number")//true
+}
+else if (y> x) {
+    console.log("B is greater number")
+}
+else {
+    console.log("both numbers are equal")
+}
+
+//program 3
+let a1=100
+let a2=50
+let a3=25
+
+if(a1>a2 && a1>a3){
+    console.log("a1 is greater")//true
+}
+else if(a2>a1 && a2>a3){
+    console.log("a2 is greater number")
+}
+else{
+    console.log("a3 is greater number")
+}
+

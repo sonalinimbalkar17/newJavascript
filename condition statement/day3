@@ -1,0 +1,110 @@
+//switch case====> multiple condition
+//1-7 days
+//switch case without break
+
+let days = 1
+switch (days) {
+    case 1:
+        console.log("Monday")
+    case 2:
+        console.log("Tuesday")
+    case 3:
+        console.log("Wednesday")
+    case 4:
+        console.log("Thrusday")
+    case 5:
+        console.log("Friday")
+    case 6:
+        console.log("Saturday")
+    case 7:
+        console.log("Sunday")
+}
+
+
+//switch case with break
+let days1 = 2
+switch (days1) {
+    case 1:
+        console.log("Monday")
+        break;
+    case 2:
+        console.log("Tuesday")
+        break;
+    case 3:
+        console.log("Wednesday")
+        break;
+    case 4:
+        console.log("Thrusday")
+        break;
+    case 5:
+        console.log("Friday")
+        break;
+    case 6:
+        console.log("Saturday")
+        break;
+    case 7:
+        console.log("Sunday")
+        break;
+}
+
+// switch case with break and default
+let days2 = 10
+switch (days2) {
+    case 1:
+        console.log("Monday")
+        break;
+    case 2:
+        console.log("Tuesday")
+        break;
+    case 3:
+        console.log("Wednesday")
+        break;
+    case 4:
+        console.log("Thrusday")
+        break;
+    case 5:
+        console.log("Friday")
+        break;
+    case 6:
+        console.log("Saturday")
+        break;
+    case 7:
+        console.log("Sunday")
+        break;
+    default:
+        console.log('invalid days')
+}
+
+
+//program1
+let city = "Vaijapur"
+switch (city) {
+    case "vaijapur":
+        console.log("MH")
+        break;
+    case "jaipur":
+        console.log("RJ")
+        break;
+    case "Ujjain":
+        console.log("MP")
+        break;
+        default:
+            console.log("invalid state")
+}
+
+//program 2
+let city2= "Pune"
+switch (city2) {
+    case "Pune":
+    case "Nashik":
+    case "Nagpur":
+        console.log("MH")
+        break
+    case "Ujjain":
+    case "Indore":
+        console.log("MP")
+        break
+    case "Jaipur":
+    default:
+        console.log("Invalid City")
+}

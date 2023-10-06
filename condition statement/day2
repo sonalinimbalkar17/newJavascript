@@ -1,0 +1,91 @@
+//ternary operator
+//Truetly value ==> 1 ,'a',"mayuri", {},[],true,  space
+
+if(1){
+    console.log("Hii")
+}
+else{
+    console.log("Bye")
+}
+
+if('a'){
+    console.log("Hello")
+}
+else{
+    console.log("Bye")
+}
+
+if('sonali'){
+    console.log("Hey")
+}
+else{
+    console.log("Bye")
+}
+
+if({}){
+    console.log("hey")
+}
+else{
+    console.log("Bye")
+}
+
+if([]){
+    console.log("hey")
+}
+else{
+    console.log("Bye")
+}
+
+if(true){
+    console.log("hey")
+}
+else{
+    console.log("Bye")
+}
+
+if(" "){
+    console.log("hey")
+}
+else{
+    console.log("Bye")
+ }
+
+console.log('---------------------------------')
+
+//falsly value => 0, null, NaN(Not a number), undefined, false
+
+if(0){
+    console.log("Hello")
+}
+else{
+    console.log("good bye")
+}
+
+if(null){
+    console.log("Hello")
+}
+else{
+    console.log("good bye")
+}
+
+if(NaN){
+    console.log("Hello")
+}
+else{
+    console.log("good bye")
+}
+
+if(undefined){
+    console.log("Hello")
+}
+else{
+    console.log("good bye")
+}
+
+if(false){
+    console.log('hey')
+}
+else{
+    console.log('bye')
+}
+

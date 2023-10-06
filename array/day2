@@ -1,0 +1,11 @@
+//seprate positive and negative numbers in array
+let numbers=[10,-30,40,-20,34,-48]
+let x=numbers.filter(function(el,index,arr){
+    return el>0
+})
+console.log(x)
+
+let y=numbers.filter(function(el,index,arr){
+    return el<0
+})
+console.log(y)

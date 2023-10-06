@@ -1,0 +1,71 @@
+//javascript
+//printing statement
+console.log("hello")
+console.log("sonali")
+console.log(10)
+console.log(10+10)
+
+//keyword==let,const
+
+//information store
+//let
+//keyword variableName =value
+let x=10
+console.log(x)
+
+let firstname="sonali"
+console.log(firstname)
+
+//update
+//variableName= newValue
+x=5
+console.log(x)
+
+firstname="disha"
+console.log(firstname)
+
+//const
+//keyword variableName =value
+const y=20
+console.log(y)
+
+const lastname="nimbalkar"
+console.log(lastname)
+
+//update---we cant do update if we write anything with const keyword--error show
+//y=10
+//console.log(y)//error
+
+//lastname=patil
+//console.log(lastname)//error
+
+//data types
+//number
+let a=10
+console.log(typeof a)
+let b=1.5
+console.log(typeof b)
+
+//string---'',"",``
+let name='sonali'
+console.log(typeof name)
+
+let name2="sonali"
+console.log(typeof name2)
+
+let name3=`sonali`
+console.log(typeof name3)
+
+//boolean---true,false
+let c=true
+console.log(typeof c)
+
+let d=false
+console.log(typeof d)
+
+let e='true'
+console.log(typeof e)//string
+
+
+
+

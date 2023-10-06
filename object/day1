@@ -1,0 +1,157 @@
+//object literal
+let info={
+    // key:"value"
+    // property:"value"
+    firstName:'sonali',
+    lastName:'nimbalkar',
+    rollNo:17,
+    age:23
+}
+console.log(info)//{ firstName: 'sonali', lastName: 'nimbalkar', rollNo: 17, age: 23 }
+console.log(info[0])//undefined
+
+// object allow duplicate keys 
+let vehicle = {
+    color:"red",
+    type:"sedane",
+    model:"Q4",
+    color:"blue"
+}
+console.log(vehicle)//{ color: 'blue', type: 'sedane', model: 'Q4' }
+
+//CURD
+//add/create
+//delete
+//update
+//retrive
+
+//program1
+let info2 = ["Kalyani", "Hadole", 22, 12]
+// retrive
+console.log(info2[1])
+//update
+info2[0] = "Nilesh"
+console.log(info2)
+// add
+info2.push("Hindi")
+info2.unshift("Mr")
+console.log(info2)
+// delete
+info2.pop()
+info2.shift()
+info2.splice(2, 1)
+
+//program 2
+let info3={
+    firstName:'sonali',
+    lastName:'nimbalkar',
+    rollNo:17,
+    age:23
+}
+// add -- dot notation and bracket notation
+console.log(info2.city='pune')
+console.log(info3['language']='hindi')
+
+// update  // dot notation and bracket notation
+console.log(info3.rollNo=20)
+console.log(info3['language']='english')
+
+// retrive  -- dot notation and bracket notation
+console.log(info3.firstName)//sonali
+console.log(info3['lastName'])//nimbalkar
+
+// delete // dot notation and bracket notation
+console.log(delete info3.city)//true
+console.log(delete info3['language'])//true
+
+// looping over object (dot notation will not work)
+// bracket notation
+let animal = {
+    color:"blue",
+    eye:2,
+    city:"pune",
+    life:50
+}
+
+for(let x in animal){
+    console.log(x,animal[x])
+}
+
+// unpack or destructure
+//array
+// unpacked the pack data
+let marks = [22, 33, 55, 66, 88, 99]
+let [s1, s2, s3, s4, s5, s6] = marks
+console.log(s3)//55
+
+//object
+let car = {
+    model: "SUV",
+    numberPlate: "5298",
+    colour: "White"
+}
+
+let { model: m, numberPlate: np, colour: c } = car
+console.log("model :" + np)//model :5298
+console.log(m)//SUV
+console.log(c)//white
+
+//nested array
+//                 0  1  2    0  1   2   3    0    1   2   3
+let rollNumber = [[1, 2, 3], [6, 7, 9, 900], [11, 22, 33, 44]]
+//                   0           1                 2
+
+console.log(rollNumber[1][1])
+
+
+let [[c1, c2, c3], [p1, p2, p3, p4], [w1, w2, w3, w4]] = rollNumber
+console.log(p4)//900
+console.log(w3)//33
+console.log(s1)//22
+
+//nested Object
+
+let student = {
+    fullName: "RamKrishna",
+    marks: {
+        math: 20,
+        science: 55
+    }
+}
+
+let { fullName, marks: { math, science } } = student
+
+console.log(science)//55
+console.log(fullName)//RamKrishna
+
+//object inside array
+let studentOne=[
+{
+firstName:"sonali",
+lastName:"nimbalkar",
+rollNo:10
+},
+
+{
+firstName:"shweta",
+lastName:"gorse",
+rollNo:20
+},
+
+{firstName:"kalyani",
+lastName:"hadole",
+rollNo:30
+}
+]
+let [{ firstName: Fn, lastName:ln ,rollNo: Rn,  }, { firstName: Fn2,lastName:ln2 , rollNo: Rn2,  },{firstName: Fn1,lastName:ln1 , rollNo: Rn1,}] = studentOne
+console.log(Fn2)//shweta
+
+//count number of object present in student
+console.log(studentOne.length)//3
+
+
+
+
+
+
+  

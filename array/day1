@@ -1,0 +1,218 @@
+//array--->collection of multiple element
+//[]---->data type
+//object--->properties and methods
+//array store value with the help of index
+//index always start with 0
+
+let marks=[20,30,40,50,60]
+// index    0  1   2  3  4
+//length    1  2   3  4  5
+
+console.log(marks[2])//40
+console.log(marks[8])//undefined
+console.log(typeof marks)//object
+
+//Property 
+//length
+//number of element present in array
+console.log(marks.length)//5
+// length-1 is always lastIndex
+console.log(marks.length-1)//4
+
+let student=['disha','bhakti','divya','pratiksha']
+//            0        1        2       3
+//for loop
+//forward
+for(let i=0;i<=student.length-1;i++){
+    //console.log(i)//0 1 2 3
+    console.log(student[i])//element
+}
+
+//reverse
+for(let i=student.length-1;i>=0;i--){
+    //console.log(i)//3 2 1 0
+    console.log(student[i])
+}
+
+//array methods
+//action, return type
+//1. push()
+//action => add element at last
+//return => new length of array
+let q1=["sonali","kirti","divya","disha","gaytri"]
+console.log(q1.push("aarti"))//6
+console.log(q1)
+
+//2. unshift()
+//action ==>add element at first
+//return ==> new length
+let q2=["sonali","kirti","divya","disha","gaytri"]
+console.log(q2.unshift("punam"))//6
+console.log(q2)
+
+//3. pop()
+//action ==> remove element from last
+//return ==> removed element
+let q3=["sonali","kirti","divya","disha","gaytri"]
+console.log(q3.pop())
+
+ //4.shift()
+//action ==> remove ele from first
+//return ==> removed element
+let q4=["sonali","kirti","divya","disha","gaytri"]
+console.log(q4.shift())
+
+//5. indexOf()
+//action ==> give the index of given element if element found, if not found then return -1
+// //return ==> number
+let q5=["sonali","kirti","divya","disha","gaytri"]
+console.log(q5.indexOf("divya"))//2
+console.log(q5.indexOf("Sonali"))//-1
+
+// 6. includes()
+//action ==> check whether given element is present in array or not. if prsent return true else false
+//return ==> boolean
+let q6=["sonali","kirti","divya","disha","gaytri"]
+console.log(q6.includes("disha"))//true
+console.log(q6.includes("Disha"))//false
+
+//7.reverse()
+// action- reverse base array 
+// return - reversed array( array)
+let q7=["sonali","kirti","divya","disha","gaytri"]
+console.log(q7.reverse())
+
+
+ //8. flat()
+//  action ==> convert two diamentional array into single array
+// return ==> array
+let Marks=[[10,20,30],[40,50,60],[70,80,90]]
+console.log(Marks.flat())
+
+//9. slice ()
+// action - cut the array betweeen passed points
+// return - sliced array( array)
+let nums=[11,22,33,44,55,66,77,88]
+console.log(nums.slice(1,5))//22 33 44 55
+console.log(nums.slice(-5,6))
+
+//10.concat()
+//action-one array to concat another array
+//return-array
+let a1=[22,33,44]
+ let a2=[20,40,80]
+ console.log(a1.concat(a2))
+
+//11.at()
+//action-give the element given index 
+//return-element
+let city=["pune","mumbai","nagpur","nashik"]
+console.log(city.at(0))//pune
+console.log(city.at(-2))//nagpur
+console.log(city[-2])//undefined
+
+//12.join()
+let info=["sonali","dattu","nimbalkar"]
+console.log(info.join('#'))
+
+//13. splice()
+//action-remove element
+//return-removed elements
+let num=[100,200,300,400,500]
+//num.splice(startIndex,numeberofelementTobeDelete)
+console.log(num.splice(1,4))//200 300 400 500
+console.log(num)//100
+
+//14.fill()
+// action- replace/fill elements in between passed points
+// return - updated array(array)
+let fruits=['banana','apple','orange','mango','grapes']
+let s1=fruits.fill('sweets',1,3)
+console.log(s1)//'banana', 'sweets', 'sweets', 'mango', 'grapes' 
+
+//15.sort()
+//action-gives order
+//return-sorted array
+let value=[22,30,50,11,20]
+console.log(value.sort())//11 20 22 30 50
+
+let char=['S','A','B','U','F','L','P','G']
+console.log(char.sort())
+
+//functional methods
+//16.map()
+//action ==> perform action with each and every element
+//return ==>  new array
+let num1=[5,10,15,20,25]
+let s2=num1.map(function(el,arr,index){
+    return el+2
+})
+console.log(s2)
+
+let birthYear = [2001 ,2004,2010 ,2016]
+// [22,19,13,7]
+let s11 = birthYear.map(function(el,index,arr){
+    return 2023 - el
+})
+console.log(s11)
+
+
+//17.filter()
+//action ==> compare element based on given condition and filterout the ele
+//return => new array
+let num2=[20,30,40,50,60,70]
+let s3=num2.filter(function(el,arr,index){
+    return el>40
+})
+console.log(s3)//50 60 70
+
+//18.forEach()
+//action ==> perform action with each ele
+//return ==> nothing
+let cities = ["pune","mumbai","nashik"]
+cities.forEach(function(el){
+    console.log("welcome "+ el)
+})
+
+
+//19.reduce()--addition
+//action =>  by performing action with all element
+//return => single value
+let n = [11,22,33,11]
+let s4 = n.reduce(function(acc = 0,el,index,arr){
+    return acc + el // 
+},0)
+console.log(s4)//77
+
+//20.Some()=> true /false
+let numb=[23,23,43,54,22,43,12,54]
+let p1=numb.some(function(el,index,arr){
+
+    return el >50
+})
+console.log(p1)//true
+
+//21.every()
+let num3=[21,23,21,43]
+let p2=num3.every(function(el,index,arr){
+    return el>30
+})
+console.log(p2)//false
+
+
+//22.find()
+//action--give next element in given condition
+//return -element
+let numbers2=[12,23,32,44,32,11,43]
+let s5=numbers2.find(function( el, index,arr){
+    return el>20
+})
+console.log(s5)//23
+
+//23.findIndex()
+let numbers3=[12,23,32,44,32,11,43]
+let s6=numbers3.findIndex(function( el, index,arr){
+    return el>30
+})
+console.log(s6)//2
+

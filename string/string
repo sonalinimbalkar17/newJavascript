@@ -1,0 +1,221 @@
+//String---data type
+//string store by value in index
+//string ==> count the total number of char  => number
+
+let city="Vaijapur"
+//V a i j a p u r
+//0 1 2 3 4 5 6 7
+
+console.log(typeof city)//string
+console.log(city[2])//i
+console.log(city[0])//V
+console.log(city[8])//undefined
+
+//property--length
+console.log(city.length)//8
+console.log(city.length-1)//7--last index
+console.log(city[city.length-1])//r
+
+//for loop
+for(let i=0;i<=city.length;i++){
+    //console.log(i)
+    console.log(city[i])
+}
+
+//reverse loop
+for(let i=city.length-1;i>=0;i--){
+    console.log(city[i])
+}
+
+//methods
+//1. toUpperCase()
+//action => convert all char of string into capital case
+//return => new string
+let fruit="mango"
+let a1=fruit.toUpperCase()
+console.log(a1)
+
+//2. toLowerCase()
+//action => convert all char of string into small case
+//return => new string
+let name="SONALI"
+let a2=name.toLowerCase()
+console.log(a2)
+
+//3. indexOf()
+let str = "Shree Ganesh"
+//S    h   r   e   e       G   a   n   e   s   h
+//0    1   2   3    4   5  6   7   8   9   10  11
+
+let a3=str.indexOf('s')
+console.log(a3)//10
+
+let a4=str.indexOf('S')
+console.log(a4)//0
+
+let a5=str.indexOf('e')
+console.log(a5)//3
+
+//4. includes()
+//action => check whether char present in string or not
+//return => true /false ==> boolean
+
+let a6=str.includes('G')
+console.log(a6)//true
+
+let a7=str.includes('')
+console.log(a7)//true
+
+let a8=str.includes('g')
+console.log(a8)//false
+
+//5.trim()
+//action ==> remove space from start and end
+//return ==> new string
+let names=" sonali "
+let p1=names.length
+console.log(p1)//8
+
+let p2=names.trim()
+console.log(p2)//sonali
+console.log(p2.length)//6
+
+//trimStart()
+//action => remove space from start
+//return => new string
+let fru=" banana "
+console.log(fru.length)//8
+let s1=fru.trimStart()
+console.log(s1)
+console.log(s1.length)//7
+
+//trimEnds()
+//action => remove space from end
+//return => new string
+let col=" pink "
+console.log(col.length)//6
+
+let s2=col.trimEnd()
+console.log(s2)
+console.log(s2.length)//5
+
+//9. startsWith()
+//actiom => check whether string start with given char , substring
+//return => true/false
+//char, subString  ==> min, asm
+
+let flower="jasmin"
+let v1=flower.startsWith('j')
+console.log(v1)//true
+
+let v2=flower.startsWith("jas")
+console.log(v2)//true
+
+let v3=flower.startsWith("min")
+console.log(v3)//false
+
+let v4=flower.startsWith('n')
+console.log(v4)//false
+
+let v5=flower.startsWith('s')
+console.log(v5)//false
+
+//10.endsWith()
+//actiom => check whether string end with given char , substring
+//return => true/false
+let stu="kalyani"
+let b1=stu.endsWith('i')
+console.log(b1)//true
+
+let b2=stu.endsWith('yani')
+console.log(b2)//true
+
+let b3=stu.endsWith('al')
+console.log(b3)//false
+
+ //11. slice()
+ //action => break string as per start and end
+ //return => new string
+
+  let firstName="Shree Ganesh"
+
+//-12 -11 -10 -9 -8  -7  -6  -5  -4  -3  -2   -1
+//S   h   r   e   e       G   a   n   e   s   h
+//0   1   2   3   4   5   6   7   8   9  10   11
+
+//left to right ==> got ans
+//right to left ==> blank string
+
+//string.slice(startPosition, endPosition)
+//endposition optinal
+//endpostion number always less than 1
+
+let q1=firstName.slice(0)
+console.log(q1)//Shree Ganesh
+
+let q2=firstName.slice(6)
+console.log(q2)//Ganesh
+
+let q3=firstName.slice(3,-1)
+console.log(q3)//ee Ganes
+
+let q4=firstName.slice(-2,4)
+console.log(q4)//blank string
+
+//11. split()
+//action => break string at given element, char, space
+//return => array
+let Myname="sonali"
+let c1=Myname.split("")
+console.log(c1)//['s','o','n','a','l','i']
+
+let c2=Myname.split('l')
+console.log(c2)//['sona','i']
+
+let fullname="sonali nimbalkar"
+let c3=fullname.split()
+console.log(c3)//['sonali nimbalkar']
+
+//12. charAt()
+//if index not found ==> return blank string
+//negetive index not support
+
+let country='india'
+let m1=country.charAt(2)
+console.log(m1)//d
+
+let m2=country.charAt(5)
+console.log(m2)//blank string
+
+let m3=country.charAt(-2)
+console.log(m3)//not support
+
+
+//13.charCodeAt()
+//ASCII value of that char
+let City="Nashik"
+let n1=City.charCodeAt(1)
+console.log(n1)
+
+let n2=City.charCodeAt(10)
+console.log(n2)//NaN
+
+let n3=City.charCodeAt(-2)
+console.log(n3)//NaN
+
+//methods
+//1. toUpperCase()==> string
+//2. toLowerCase()==> string
+//3. indexOf() => -1/ number
+//4. includes() => true/false ==> boolean
+//5. trim() => space start end ==> new string
+//6. trimStart() => space start => new string
+//7. trimEnd()=> space end=> new string
+//8. startsWith() => char/substring => true/false
+//9. endsWith() => boolean
+//10. slice()==> string
+//11. split() ==> array
+//12. charAt(index) ==>char /string
+//13. charCodeAt(index) ==> ascii value of char
+
+
