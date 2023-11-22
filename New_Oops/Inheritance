@@ -1,0 +1,133 @@
+//OOPS
+
+//1. inheritance
+//2. encapsulation
+//3. abstraction
+//4. polymorphism
+
+//codeing => security,reused, maintain
+
+//Inheritance
+//program1(hardcode)
+class Student{
+    firstName="sonali"
+    lastName="nimbalkar"
+    adharNo=123
+
+    display=function(){
+        console.log(this.firstName+this.lastName)
+    }
+}
+
+class Teacher{
+    firstName="sonali"
+    lastName="nimbalkar"
+    adharNo=123
+    salary=10000
+    display=function(){
+        console.log(this.firstName+this.lastName)
+    }
+    displaySalary(){
+        console.log(this.salary)
+    }
+}
+let disha=new Student()
+console.log(disha.firstName)
+console.log(disha.lastName)
+console.log(disha.adharNo)
+console.log(disha.salary)
+disha.display()
+
+let sai=new Teacher()
+console.log(sai.firstName)
+console.log(sai.lastName)
+console.log(sai.salary)
+sai.displaySalary()
+
+//use inheritance
+//program2
+
+class StudentB{
+    firstName="disha"
+    lastName="nimbalkar"
+    adharNo=1234
+
+    display=function(){
+        console.log(this.firstName+this.lastName)
+    }
+}
+class TeacherB extends StudentB{
+    salary=10000
+    displaySalary(){
+        console.log(this.salary)
+    }
+}
+let kirti=new TeacherB()
+console.log(kirti.firstName)
+console.log(kirti.lastName)
+console.log(kirti.adharNo)
+console.log(kirti.salary)
+kirti.display()
+kirti.displaySalary()
+
+//program3
+//constuctor
+
+class StudentC{
+    constructor(firstName,lastName,adharNo){
+        this.firstName=firstName
+        this.lastName=lastName
+        this.adharNo=adharNo
+    }
+    display(){
+        console.log(this.firstName+this.lastName)
+    }
+}
+class TeacherC extends StudentC{
+    salary=10000
+    displaySalary(){
+        console.log(this.salary)
+    }
+}
+
+
+let shweta=new TeacherC('shweta','gorse','123')
+console.log(shweta.firstName)
+console.log(shweta.lastName)
+console.log(shweta.adharNo)
+shweta.display()
+shweta.displaySalary()
+
+
+//program 4
+
+class StudentD{
+    constructor(fn,ln,adharNo){
+    this.firstName=fn
+    this.lastName=ln
+    this.adharNo=adharNo
+    }
+    display() {
+        console.log(this.firstName+this.lastName)
+    }
+}
+
+class teacherD extends StudentD{
+    constructor(fn,ln,adharNo,salary){
+        super(fn,ln,adharNo)
+        this.salary=salary
+    }
+    displaySalary(){
+        console.log(this.salary)
+    }
+}
+
+let kalyani=new teacherD("kalyani","patil",123,10000)
+console.log(kalyani.firstName)
+console.log(kalyani.lastName)
+console.log(kalyani.adharNo)
+console.log(kalyani.salary)
+kalyani.display()
+kalyani.displaySalary()
+
+

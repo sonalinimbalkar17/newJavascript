@@ -1,0 +1,166 @@
+//object literal
+//program 1
+let sonali = {
+    firstName: "sonali",
+    lastName: "nimbalkar",
+    age: 23,
+    rollNo: 15,
+    displayName: function () {
+        console.log(this.firstName + this.lastName)
+    }
+}
+console.log(sonali)
+sonali.displayName()//sonalinimbalkar
+
+//four basic operation on object
+// retrive //update  //add  //delete
+//program 2
+let disha = {
+    firstName: 'disha',
+    lastName: 'nimbalkar',
+    age: 15,
+    rollNo: 20,
+    displayName: function () {
+        console.log(this.firstName + this.lastName)
+    }
+}
+console.log(disha)//object
+
+//retrive
+console.log(disha.firstName)
+console.log(disha['lastName'])
+
+//update
+console.log(disha.age = 16)
+console.log(disha['lastname'] = 'patil')
+
+//add
+console.log(disha.city = 'pune')
+console.log(disha['learn'] = 'java')
+console.log(disha)
+
+//delete
+delete disha.city
+delete disha['rollNo']
+console.log(disha)
+
+//program 3
+// Template 
+
+class Person {
+    firstName
+    lastName
+    age
+    roll
+
+    displayName() {
+        console.log(this.firstName + this.lastName)
+    }
+}
+let sai = new Person()
+console.log(sai)
+
+sai.firstName = "sai"
+sai.lastName = "nimbalkar"
+sai.age = 10
+sai.roll = 20
+console.log(sai)//Person { firstName: 'sai', lastName: 'nimbalkar', age: 10, roll: 20 }
+sai.displayName()
+
+// constructor 
+//program 1
+class Person2 {
+    constructor(fn, ln, ag, rn) {
+        this.firstName = fn
+        this.lastName = ln
+        this.age = ag
+        this.rollNo = rn
+    }
+
+    displayName() {
+        console.log(this.firstName + this.lastName)
+    }
+}
+let puja = new Person2('puja', 'pawar', 25, 10)
+console.log(puja)//Person2 { firstName: 'puja', lastName: 'pawar', age: 25, rollNo: 10 }
+puja.displayName()
+
+//program 2
+class Person3 {
+    setFirstName(fn) {
+        this.firstName = fn
+    }
+    setLastName(ln) {
+        this.lastName = ln
+    }
+    setAge(ag) {
+        this.age = ag
+    }
+    setRollNo(rn) {
+        this.rollNo = rn
+    }
+    displayName() {
+        console.log(this.firstName + this.lastName)
+    }
+}
+let kirti = new Person3()
+console.log(kirti)//Person3 {}
+
+kirti.setFirstName = "kirti"
+kirti.setLastName = "nimalkar"
+kirti.setAge = 18
+kirti.setRollNo = 5
+console.log(kirti)
+
+
+//set and get keyword
+class Person4 {
+    set firstName(fn) {
+        this.first_name = fn
+    }
+    get firstName() {
+        return this.first_name
+    }
+
+    set lastName(ln) {
+        this.last_name = ln
+    }
+    get lastName() {
+        return this.last_name
+    }
+
+    set rollNo(rn) {
+        this.roll_no = rn
+    }
+    get rollNo() {
+        return this.roll_no
+    }
+
+    set Age(ag) {
+        this.age = ag
+    }
+    get Age() {
+        return this.age
+    }
+
+
+    displayName() {
+        console.log(this.first_name + this.last_name)
+    }
+
+
+
+}
+
+let abc = new Person4()
+console.log(abc)
+
+abc.firstName = "vidya"
+abc.lastName = "rav"
+abc.Age = 10
+abc.rollNo = 45
+
+console.log(abc.firstName)
+console.log(abc.lastName)
+console.log(abc.Age)
+console.log(abc.rollNo)

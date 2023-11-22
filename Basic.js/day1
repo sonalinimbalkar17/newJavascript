@@ -1,4 +1,5 @@
 //javascript
+//it is case sensitive langauge
 //printing statement
 console.log("hello")
 console.log("sonali")

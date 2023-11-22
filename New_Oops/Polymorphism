@@ -1,0 +1,81 @@
+//Polymorphism
+// JavaScript allows you to override methods in derived objects, achieving polymorphism.
+
+// overloading-- same class , same methodName , different signature
+class Calculator{
+addition(x,y){
+console.log(x+y)
+}
+addition(x,y,z){
+console.log(x+y+z)
+}
+addition(x,y,z,a){
+console.log(x+y+z+a)
+}
+
+//handling
+addition(x,y,z,a){
+if(x !=undefined && y !=undefined && z !=undefined && a !=undefined){
+console.log(x+y+z+a)
+}
+else if(x !=undefined && y !=undefined && z !=undefined){
+console.log(x+y+z)
+}
+else if(x !=undefined && y !=undefined){
+console.log(x+y)
+}
+}
+}
+//let a=new Calculator()
+//a.addition(10,5)//NaN
+
+let cal=new Calculator()
+cal.addition(10,5)
+cal.addition(10,5,5)
+cal.addition(10,5,5,5)
+
+//overriding
+// different class , same method , same signature
+
+class worldBank{
+save(){
+console.log('I am save from worldBank')
+}
+loan(){
+console.log('I am loan from worldBank')
+}
+}
+
+class SBI extends worldBank{
+displayBranch(){
+console.log('vaijapur branch')
+}
+save(){
+console.log('i am save from SBI')
+}
+loan(){
+console.log('i am loan from SBI')
+}
+}
+
+class IDBI extends worldBank{
+displayBranch(){
+console.log('vaijapur branch')
+}
+save(){
+console.log('i am save from IDBI')
+}
+loan(){
+console.log('i am loan from IDBI')
+}
+}
+
+let sbi = new SBI()
+sbi.loan()
+sbi.save()
+sbi.displayBranch()
+
+let idbi = new IDBI()
+idbi.loan()
+idbi.save()
+idbi.displayBranch()

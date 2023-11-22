@@ -1,0 +1,85 @@
+//MAP (data type)
+//object=>keys==> same data type=>string
+//keys==>diff datatype==>
+
+//let a='' ==>string
+//let a1=100 ==>number
+//let a2=[] ==>array
+//let a3=false ==>boolean
+//let a4={} ==>object
+
+let student={
+    firstName:"sonali",
+    lastName:"nimbalkar",
+    rollNumbar:25,
+    skill:['js','py','cy'],
+    isStuding:false
+}
+//chack keys data type
+for(let key in student){
+    console.log(typeof key)//string
+}
+
+let m1=new Map()
+console.log(m1)
+//methods()
+//add element in map
+//1.set()
+m1.set('firstName',"sonali")
+m1.set(123,'rollNumber')
+m1.set(true,'nature')
+console.log(m1)
+
+//passed keys return value
+//2.get
+console.log(m1.get('firstName'))//sonali
+console.log(m1.get(true))//nature
+console.log(m1.get('rollNumber'))//undefined
+
+//3.has==>chack present return true otherwise false
+console.log(m1.has(123))//true
+console.log(m1.has('vaibhav'))//false
+console.log(m1.has('sonali'))//false
+
+//size(property)
+console.log(m1.size)//3
+//4.delete()
+console.log(m1.delete(123))//true
+console.log(m1)
+
+//5.clear
+m1.clear()
+console.log(m1)//map(0)
+
+let m2=new Map([['firstName',"komal"],[25,'age'],[20000,'salary']])
+console.log(m2)
+
+//6.key()==>return all keys(map iterator)
+console.log(m2.keys())
+
+//7.value()==>return all values
+console.log(m2.values())
+
+//8.entries==>return keys and values
+console.log(m2.entries())
+
+//print keys and value one by one use for loop
+//for loop for keys
+for(let key of m2.keys()){
+    console.log(key)
+}
+
+//for loop for values
+for(let v of m2. values()){
+    console.log(v)
+}
+//for loop for keys and values
+for(let [k,v] of m2.entries()){
+    console.log(k,v)
+}
+
+
+
+
+
+

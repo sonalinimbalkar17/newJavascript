@@ -1,0 +1,117 @@
+// single inheritance 
+class Student{
+    constructor(fn,ln,age){
+        this.firstName=fn
+        this.lastName=ln
+        this.age=age
+    }
+    displayName(){
+        console.log(this.firstName+this.lastName)
+    }
+}
+
+class Teacher extends Student{
+    constructor(fn,ln,age,salary){
+        super(fn,ln,age)
+        this.salary=salary
+    }
+    displaySalary(){
+        console.log(this.salary)
+    }
+}
+let diya=new Teacher('diya','pawar',20,40000)
+console.log(diya.firstName)
+console.log(diya.lastName)
+console.log(diya.age)
+diya.displaySalary()
+diya.displayName()
+
+//multi-level
+//program1
+class Grandfather {
+
+    constructor(fn,ln){
+        this.firstName = fn 
+        this.lastName  = ln 
+    }
+
+    displayGname(){
+        console.log(this.firstName + this.lastName)
+    }
+
+}
+
+class Father extends Grandfather {
+    constructor(fn,ln,ffn){
+        super(fn,ln)
+        this.fname = ffn
+    }
+    displayFname(){
+        console.log(this.fname + this.lastName)
+    }
+}
+class Son extends Father {
+    constructor(fn,ln,ffn,ssn){
+        super(fn,ln,ffn)
+        this.sname  = ssn
+    }
+    displaySname(){
+        console.log(this.sname + this.lastName)
+    }
+}
+
+let sonali = new Son("shivaji","nimbalkar","dattu","sonali")
+sonali.displayFname()
+sonali.displayGname()
+sonali.displaySname()
+
+
+// program 2
+
+class Mother {
+
+    constructor(fn,ln){
+        this.firstName = fn 
+        this.lastName = ln
+    }
+
+    displayMName(){
+        console.log(this.firstName + this.lastName)
+    }
+}
+
+class SonA extends Mother {
+    constructor(fn,ln,sn){
+        super(fn,ln)  
+        this.sname = sn
+    }
+    displaySName(){
+        console.log(this.sname + this.lastName)
+    }
+}
+
+class Daughter extends Mother {
+
+    constructor(fn,ln,dn){
+        super(fn,ln)  
+        this.dname = dn
+    }
+    displayDName(){
+        console.log(this.dname + this.lastName)
+    }
+
+
+}
+
+
+let sai  = new SonA("nirmala","nimbalkar","sai")
+console.log(sai.firstName)
+console.log(sai.lastName)
+sai.displayMName()
+sai.displaySName()
+
+let disha  = new Daughter("nirmala","nimbalkar","disha")
+console.log(disha.firstName)
+console.log(disha.lastName)
+disha.displayMName()
+disha.displayDName()

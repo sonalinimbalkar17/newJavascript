@@ -1,0 +1,113 @@
+//sync
+function myName() {
+    console.log("sona")
+}
+
+function myAge() {
+    console.log(23)
+}
+//myName()
+//myAge()
+
+//async
+function msgFirst() {
+    setTimeout(function () {
+        console.log('hey')
+    }, 3000)
+}
+
+function msgLast() {
+    console.log('byy')
+}
+
+//msgFirst()
+//msgLast()
+
+//program 1
+function createUser() {
+    setTimeout(function () {
+        console.log('create user')
+    }, 3000)
+
+    setTimeout(function () {
+        console.log('get id')
+    }, 2000)
+
+    setTimeout(function () {
+        console.log('get info')
+    }, 1000)
+
+}
+//createUser()
+
+//program 2
+//async-----sync
+//call back hell-----use asyc to sync
+
+function createUser() {
+    setTimeout(function () {
+        console.log('create user')
+        setTimeout(function () {
+            console.log('get id')
+            setTimeout(function () {
+                console.log('get info')
+            }, 1000)
+        }, 2000)
+    }, 3000)
+}
+//createUser()
+
+//solution promises
+//pending,resolve,reject
+
+function createUser(){
+    return new Promise(function(resolve,reject){
+        setTimeout(function(){
+            resolve('create user')
+        },3000)
+    })
+}
+
+function getId(){
+    return new Promise(function(resolve,reject){
+        setTimeout(function(){
+            resolve('get id')
+        },2000)
+    })
+}
+
+function getInfo(){
+    return new Promise(function(resolve,reject){
+        setTimeout(function(){
+            resolve('get info')
+        },1000)
+    })
+}
+// createUser()
+// .then(function(str){
+//     console.log(str)
+//     return "get id"
+// })
+// .then(function(str){
+//     console.log(str)
+//     return "get info"
+// })
+// .then(function(str){
+// console.log(str)
+// })
+// .catch(function(){
+//     console.log('fail')
+// })
+// .finally(function(){
+//     console.log('i will always run')
+// })
+
+async function getUsers(){
+   let a1= await createUser()
+   console.log(a1)
+   let a2=await getId()
+   console.log(a2)
+   let a3=await getInfo()
+   console.log(a3)
+}
+getUsers()

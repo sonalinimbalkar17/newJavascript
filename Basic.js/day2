@@ -55,6 +55,30 @@ console.log(p)
 console.log(p*6)
 console.log(p+60)
 
+//1.function declaration
+function sum1(){
+    console.log(10+3)
+}
+sum1()
+
+//2.function expression
+let sum2=function(){
+    console.log(30+4)
+}
+sum2()
+
+//3.arrow function
+let sum3=()=>{
+    console.log(20+7)
+}
+sum3()
+
+let sub=(u,v)=>{
+    console.log(u-v)
+}
+sub(10,5)
+
+
 //2.comparision operator  ==> <, >, <=, >=,==, !=, ===, !==
 //boolean
 //== , !=  => value  5 , "5"  => dynamic comparision operator

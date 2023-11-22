@@ -1,0 +1,210 @@
+let info={
+    firstName:"sonali",
+    lastName:"nimbalkar",
+    age:23,
+    display:function(){
+        console.log(this.age)
+    }
+}
+info.display()//23
+
+//lexical scope
+
+ //parnet function variable child function access 
+ //child function variable can't access in parent function
+
+ function add(){
+    let a=10
+    let b=5
+    console.log(a+b)
+
+    function add2(){
+        let c=10
+        let d=6
+        console.log(c+d)
+       // console.log(e+f)//e is not defined
+
+        function add3(){
+            let e=10
+            let f=7
+            console.log(e+f)
+            console.log(c+d)
+        }
+        add3()//17
+    }
+    add2()//16
+ }
+ add()//15
+
+
+ function init(){
+        let p=2
+        let q=3
+        console.log(p+q)//5
+        //console.log(r+s)//r is not defined
+    
+        function initOne(){
+            let r=10
+            let s=12
+            console.log(p+q)//5
+            console.log(r+s)//22
+        }
+    
+        initOne()
+    }
+    init()
+    
+    //---------------------------------------------------------------
+
+     //global scope
+
+    // let e=10
+// // let f=20
+// // function display(){
+// //     let a=5
+// //     let b=2
+// //     console.log(a+b)//7
+// //     console.log(e+f)//30
+
+// //     function displayOne(){
+// //         let c=30
+// //         let d=20
+// //         let e=100
+// //         let f=50
+// //         console.log(e+f+a+b)//157
+// //         console.log(c+d)//50
+
+// //         function displayTwo(){
+// //             let e=400
+// //             let f=500
+// //             console.log(e+f)//900
+// //         }
+// //         displayTwo()
+// //     }
+// //     displayOne()
+// // }
+// // display()
+
+// //============================================================
+
+// let e=10
+// let f=20
+// function display(){
+//     let a=5
+//     let b=2
+//     let e=70
+//     let f=5
+//     console.log(a+b)//7
+//     console.log(e+f)//30
+
+//     function displayOne(){
+//         let c=30
+//         let d=20
+//         let e=100
+//         let f=50
+//         console.log(e+f+a+b)//157
+//         console.log(c+d)//50
+
+//         function displayTwo(){
+//             console.log(e+f)//150 //75 //30
+//         }
+//         displayTwo()
+//     }
+//     displayOne()
+// }
+// display()
+
+//===========================================================
+
+//var let const
+//{}
+
+//closure
+
+// function add(){
+//     let s=3
+//     let v=2
+//     return s+v//close
+//     console.log(s+v+10)
+//     console.log("hello")
+
+// }
+// let y1=add()
+// console.log(y1)
+
+function add(){
+    let a=10
+    let b=20
+    return function(){
+        console.log(a+b)
+        console.log(a+b+10)
+        console.log("hello")
+    }
+}
+let s1=add()
+console.log(s1)
+s1()
+
+
+//let
+let a=10
+console.log(a)//10
+a=100
+console.log(a)//100
+
+//var
+var b=20
+console.log(b)//20
+b=200
+console.log(b)//200
+
+//const
+const c=30
+console.log(c)//30
+//c=300
+//console.log(c)//error
+
+
+let p=5
+{
+    let p=10
+    console.log(p)//10
+}
+console.log(p)//5
+
+
+let p1=5
+{
+    let p1=10
+    console.log(p1)//10
+}
+p1=100
+console.log(p1)//100
+
+
+var m=22
+{
+    var m=11
+    console.log(m)//11
+}
+m=33
+console.log(m)//33
+
+
+const s=66
+{
+    const s=77
+    console.log(s)//77
+}
+console.log(s)//66
+
+
+const ss1=66
+{
+    const ss1=77
+    console.log(ss1)//77
+}
+ss1=99
+console.log(ss1)//error
+
+

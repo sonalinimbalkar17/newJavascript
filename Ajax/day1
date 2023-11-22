@@ -1,0 +1,228 @@
+
+//sync---one by one execusion
+
+function additionA() {
+    console.log('addition A')
+}
+function additionB() {
+    console.log('addition B')
+}
+//additionA()
+//additionB()
+
+
+//async---settimeout
+
+function additionC() {
+    setTimeout(function () {
+        console.log('additionC')
+    }, 3000)
+}
+function additionD(){
+    console.log('additionD')
+}
+//additionC()
+//additionD()
+
+//program 1
+
+function getInfo(){
+    setTimeout(function(){
+        console.log("user created")
+    },3000)
+
+    setTimeout(function(){
+        console.log("get id")
+    },2000)
+
+    setTimeout(function(){
+       console.log("get info")
+},1000)
+}
+//getInfo()
+
+//program 2
+//call back hell-----use asyc to sync
+function getInfo(){
+    setTimeout(function(){
+        console.log("user created")
+        setTimeout(function(){
+            console.log("get id")
+            setTimeout(function(){
+                console.log("get info")
+            },1000)
+
+        },2000)
+
+    },3000)
+}
+//getInfo()
+
+//call back hell solution is promises
+//promises----pending, resolved and reject
+
+//example 1
+let pro=new Promise(function(resolve,reject){
+    let p=10
+    let q=5
+    if(p==q){
+        resolve('hey')
+    }
+else{
+    reject('byy')
+}
+})
+//consuming the promise
+pro.then(function(str){
+    console.log(str)
+},function(str){
+    console.log(str)//byy
+})
+
+//example 2
+let pro1=new Promise(function(resolve,reject){
+    let a1=11
+    let b1=11
+    if(a1==b1){
+        resolve([10,20,30,40])
+    }
+        else{
+            reject([100,200,300,400])
+        }  
+})
+pro1.then(function(arr){
+console.log(arr[2])//30
+},function(arr){
+console.log(arr[0])
+})
+
+//example 3
+let pro2=new Promise(function(resolve,reject){
+    let s=50
+    let r=40
+    if(s==r){
+        resolve("sonali")
+    }
+    else{
+        reject("shweta")
+    }
+})
+//consuming promise------then(),catch()
+pro2.then(function(s){
+console.log(s)
+})
+.catch(function(st){
+    console.log(st)//shweta
+})
+
+//example 4
+let pro3=new Promise(function(resolve,reject){
+    let e=100
+    let f=500
+    if(e==f){
+        resolve('happy')
+    }
+        else{
+            reject('sad')
+        
+    }
+})
+//consuming promise------then(),catch(),finally()
+pro3
+.then(function(moodH){
+    console.log(moodH)
+})
+.catch(function(moodS){
+    console.log(moodS)//sad
+})
+.finally(function(){
+    console.log('i will always excute')
+})
+
+//example 5
+let pro4=new Promise(function(resolve,reject){
+    let g=111
+    let h=111
+    if(g==h){
+        resolve('hey')
+    }
+        else{
+            reject('byyy')
+        
+    }
+})
+pro4
+.then(function(str){
+    console.log(str)//hey
+    return "hi"
+})
+.then(function(str2){
+    console.log(str2)//hi
+})
+.catch(function(str){
+    console.log(str)
+})
+.finally(function(){
+    console.log('i will alyaws run')
+})
+
+//call back hell problem sorted with promises
+//call back hell
+function getInfo(){
+    setTimeout(function(){
+        console.log("user created")
+        setTimeout(function(){
+            console.log("get id")
+            setTimeout(function(){
+                console.log("get info")
+            },1000)
+
+        },2000)
+
+    },3000)
+}
+//getInfo()
+
+//solve promises
+
+function createUser(){
+    return new Promise(function(resolve,reject){
+        setTimeout(function(){
+            resolve('user created')
+        },3000)
+    })
+}
+
+function getId(){
+    return new Promise(function(resolve,reject){
+        setTimeout(function(){
+            resolve('get id')
+        },2000)
+    })
+}
+
+function getInfo(){
+    return new Promise(function(resolve,reject){
+        setTimeout(function(){
+            resolve('get info')
+        },1000)
+    })
+}
+createUser()
+.then(function(st){
+    console.log(st)
+    return getId()
+})
+.then(function(st){
+    console.log(st)
+    return getInfo()
+})
+.then(function(str){
+    console.log(str)
+})
+.catch(function(){
+    console.log('fail')
+})
+.finally(function(){
+    console.log('i will excute')
+})

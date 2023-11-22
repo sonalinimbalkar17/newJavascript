@@ -1,0 +1,170 @@
+//OOPS
+
+//1. inheritance
+//2. encapsulation
+//3. abstraction
+//4. polymorphism
+
+//codeing => security,reused, maintain
+
+// class Father {
+//     surName = "nimbalkar"
+//     money = 40000
+//     displayMoney() {
+//         console.log(`I have money ${this.money}`)
+//     }
+// }
+// class Son extends Father {
+//     home = "shreeGanesh"
+//     displayHome() {
+//         console.log(`i Have my own home name as ${this.home}`)
+
+//     }
+// }
+
+// let dattu = new Father()
+// console.log(dattu.surName)
+// console.log(dattu.money)
+// dattu.displayMoney()
+// console.log(dattu.home)//undefined
+// //dattu.displayHome()//is not a function
+
+// let sai = new Son()
+// console.log(sai.surName)
+// console.log(sai.home)
+// console.log(sai.money)
+// sai.displayMoney()
+// sai.displayHome()
+
+
+//==========================================================
+
+
+//parent and child dont have constructor
+
+// class GrandFather {
+//     surName = "nimbalkar"
+//     money = 40000
+//     displayMoney() {
+//         console.log(`I have money ${this.money}`)
+//     }
+// }
+// class Father extends GrandFather {
+//     home = "shreeGanesh"
+//     displayHome() {
+//         console.log(`i Have my own home name as ${this.home}`)
+
+//     }
+// }
+// class Son extends Father {
+//     car = "Audi"
+//     displayCar() {
+//         console.log(`I have ${this.car}`)
+//     }
+// }
+// let shivaji = new GrandFather()
+// console.log(shivaji.surName)
+// console.log(shivaji.money)
+// shivaji.displayMoney()
+
+
+// let dattu = new Father()
+// console.log(dattu.money)
+// console.log(dattu.surName)
+// console.log(dattu.home)
+// dattu.displayMoney()
+// dattu.displayHome()
+
+
+// let sai=new Son()
+// sai.displayCar()
+// sai.displayHome()
+// sai.displayMoney()
+// console.log(sai.surName)
+// console.log(sai.money)
+// console.log(sai.car)
+
+//==========================================================
+//parent having constructor and child dont have constructor
+
+// class Father{
+//     constructor(surName,money){
+//         this.surName=surName
+//         this.money=money
+//     }
+//     displayMoney(){
+//         console.log(this.money)
+//     }
+// }
+// class Son extends Father{
+//     home='shivay'
+//     displayHome(){
+//         console.log(this.home)
+//     }
+//}
+
+// let dattu=new Father("nimbalkar",30000)
+// dattu.displayMoney()
+// console.log(dattu.surName)
+// console.log(dattu.money)
+// //dattu.displayHome()//not a function
+
+// let sai=new Son()
+// sai.displayMoney()//undefined
+// sai.displayHome()
+// console.log(sai.surName)//undefined
+// console.log(sai.money)//undefined
+// console.log(sai.home)
+
+//======================================================
+
+//paremt constructor child constructor
+
+class GrandFather{
+    constructor(surName,money){
+        this.surName=surName
+        this.money=money
+    }
+    displayMoney(){
+        console.log(this.money)
+    }
+}
+class Father extends GrandFather{
+    constructor(surName,money,home){
+        super(surName,money)
+        this.home=home
+    }
+    displayHome(){
+        console.log(this.home)
+    }
+}
+class Son extends Father{
+    constructor(surName,money,home,car){
+        super(surName,money,home)
+        this.car=car
+    }
+    displayCar(){
+        console.log(this.car)
+    }
+}
+let shivaji=new GrandFather("nimbalkar",40000)
+shivaji.displayMoney()
+console.log(shivaji.surName)
+console.log(shivaji.money)
+
+let dattu=new Father("nimbalkar",40000,"shivay")
+dattu.displayHome()
+console.log(dattu.home)
+dattu.displayMoney()
+console.log(dattu.surName)
+console.log(dattu.money)
+
+let sai=new Son("nimbalkar",40000,"shivay","audi")
+sai.displayMoney()
+sai.displayCar()
+sai.displayHome()
+console.log(sai.surName)
+console.log(sai.home)
+console.log(sai.money)
+console.log(sai.car)
+

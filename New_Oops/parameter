@@ -1,0 +1,95 @@
+//number as parameter and number as return type
+function add (a,b){
+    return a+b
+}
+let p1=add(10,5)
+console.log(p1)
+console.log(typeof p1)
+
+//string as parameter and string as return type
+function greet(word){
+    return "wel"+word
+}
+let p2=greet("come")
+console.log(p2)
+console.log(typeof p2)
+
+//boolean as parameter and boolean as return type
+function drive(age,vehicleAvail){
+    if(age >=18 && vehicleAvail){
+        return true
+    }
+    else{
+        return false
+    }
+}
+let p3=drive(18,true)
+console.log(p3)
+console.log(typeof p3)
+
+//array as parameter and array as return type
+let name=["sonali","aarti","disha"]
+function addN(lst,ele){
+    lst.push(ele)
+    return lst
+}
+let p4=addN(name,"sai")
+console.log(p4)
+console.log(typeof p4)
+
+// object as parameter and object as return type 
+info={
+    firstName:"sonali",
+    lastName:"nimbalkar"
+}
+
+function addCity(object,ci){
+    object.city=ci
+    return object
+}
+let p5=addCity(info,"pune")
+console.log(p5)
+console.log(typeof p5)
+
+// set as parameter and set as return type 
+let s1=new Set()
+function addName(set,nm){
+    set.name=nm
+    return set
+}
+let p7=addName(s1,"kirti")
+console.log(p7)
+console.log(typeof p7)
+
+
+// map as parameter and map as return type 
+let s2=new Map()
+function addAge(map,ag){
+    map.age=ag
+    return map
+}
+let p8=addAge(s2,"18")
+console.log(p8)
+console.log(typeof p8)
+
+// function as parameter and function as return 
+let x  = 10 
+console.log(x) //10
+
+let Add = function(x,y){
+    return x + y
+}
+
+function addition(fn,x,y){
+
+    // let x = 10
+    // let y = 4
+    // let fn = function(x,y){
+    //return x + y
+//}
+    let p6 = fn(x,y)
+    return p6
+}
+let p6 = addition(Add,10,4)
+console.log(p6)//14
+

@@ -1,0 +1,78 @@
+//set==>data type
+//set==>unique value store
+
+let mySet=new Set()
+console.log(mySet)//set(0)
+
+//size==>property
+console.log(mySet.size)//0
+
+let y3=new Set('mayuri')
+console.log(y3.size)//6==>character count
+
+let y4=new Set("Shree Ganesh")
+console.log(y4.size)//9==>Shre Gans==>double char not count
+
+let arr=[12,34,22,12,78,90,34,90]
+
+let s1=new Set(arr)
+console.log(s1)//12,34,22,78,90
+console.log(s1.size)//5
+
+
+//methods
+//1.add()==>add element in set
+let y1=mySet.add('sonali')
+console.log(y1)//set(1){'sonali'}
+
+console.log(mySet)//set(1){'sonali'}
+//add multiple element
+let newSet=new Set(['mayuri','vaibhav','ram','krushna'])
+console.log(newSet)
+
+//add the values in set with the help of constructor
+let mySet2=new Set(['a','b','c','d'])
+console.log(mySet2)
+
+
+//2.has()==>chack element present ==>return boolean
+let s2=new Set([1,2,3])
+console.log(s2.has(3))//true
+console.log(s2.has(100))//false
+
+//3.delete()==>return type boolean
+let setA=new Set([11,33,66,99,12])
+let w1=setA.delete(66)
+console.log(w1)//true
+console.log(setA)
+
+let w2=setA.delete(5)
+console.log(w2)//false
+
+//4.forEach()//print all values
+setA.forEach(function(item){
+    console.log(item)
+})
+
+//5.clear()
+setA.clear()
+console.log(setA)//set(0)
+
+//loop
+for(let value of setA){
+    console.log(value)//Set(4) { 'a', 'b', 'c', 'd' }
+}
+
+//iterator
+let setB=new Set(['a','b','c','d'])
+console.log(setB)
+
+let r1=setB.keys()
+console.log(r1)//{a, b ,c,d}
+console.log(r1.next().value)//a
+console.log(r1.next().value)//b
+console.log(r1.next().value)//c
+console.log(r1.next().value)//d 
+
+
+
