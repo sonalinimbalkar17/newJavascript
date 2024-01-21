@@ -108,7 +108,7 @@ idbi.save()
             }
         }
         
-        let d1=new Calculator()
+       // let d1=new Calculator()
         //d1.addition(10,20) //30
        // d1.addition(10,20,30) //60
-        d1.addition(10,20,30,40)//100
+        //d1.addition(10,20,30,40)//100
